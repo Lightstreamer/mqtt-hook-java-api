@@ -5,8 +5,8 @@ import cool.mqtt.hooks.MqttMessage;
 import cool.mqtt.hooks.QoS;
 
 /**
- * Simple builder class to simplify the making of an {@link MqttBrokerConfig} instance.
- *
+ * Simple builder class to simplify the making of an {@link MqttBrokerConfig}
+ * instance.
  */
 public class MqttBrokerConfigBuilder {
 
@@ -31,11 +31,11 @@ public class MqttBrokerConfigBuilder {
     private boolean will_retain;
 
     /**
-     * Creates a {@code MqttBrokerConfigBuilder} initialized with the specified MQTT broker address
+     * Creates a {@code MqttBrokerConfigBuilder} initialized with the specified
+     * MQTT broker address
      * 
      * @param address
      *            the address of the MQTT broker
-     * 
      */
     public MqttBrokerConfigBuilder(String address) {
         this.address = address;
@@ -73,17 +73,17 @@ public class MqttBrokerConfigBuilder {
      * @param topic
      *            the topic name
      * @param applicationMessage
-     *            the carried <i>Application Message</i>
+     *            the carried Application Message
      * @param qos
      *            the Quality of Service
      * @param retain
-     *            the <i>retained</i> flag
+     *            the retained flag
      * @return a reference to this object
      * @see MqttMessage
      * @see MqttBrokerConfig#getWillMessage()
      */
-    public MqttBrokerConfigBuilder willMessage(String topic, byte[] applicationMessage, QoS qos,
-        boolean retain) {
+    public MqttBrokerConfigBuilder willMessage(String topic,
+        byte[] applicationMessage, QoS qos, boolean retain) {
 
         this.will_topic = topic;
         this.will_applcationMessage = applicationMessage;
@@ -119,7 +119,8 @@ public class MqttBrokerConfigBuilder {
     }
 
     /**
-     * Sets the ClientId prefix to be used for shared connection on this builder.
+     * Sets the ClientId prefix to be used for shared connection on this
+     * builder.
      * 
      * @param clientIdPrefix
      *            the ClientId prefix
@@ -132,8 +133,8 @@ public class MqttBrokerConfigBuilder {
     }
 
     /**
-     * Returns a new {@code MqttBrokerConfig} instance initialized with all parameters provided to
-     * this builder.
+     * Returns a new {@code MqttBrokerConfig} instance initialized with all
+     * parameters provided to this builder.
      * 
      * @return a {@code MqttBrokerConfig} instance
      */

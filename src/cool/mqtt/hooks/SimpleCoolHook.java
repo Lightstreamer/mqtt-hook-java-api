@@ -4,12 +4,12 @@ import java.io.File;
 import java.util.Map;
 
 /**
- * Simple skeletal implementation of the {@code MQTTCoolHook} interface, meant as a base class to be
- * extended in order to minimize the effort required to provide a full implementation of a custom
- * Hook.
+ * Simple skeletal implementation of the {@code MQTTCoolHook} interface, meant
+ * as a base class to be extended in order to minimize the effort required to
+ * provide a full implementation of a custom Hook.
  * <p>
- * All methods provide a trivial implementation, therefore subclasses must override those methods
- * for which a specific behaviour is really needed.
+ * All methods provide a trivial implementation, therefore subclasses must
+ * override those methods for which a specific behaviour is really needed.
  */
 public class SimpleCoolHook implements MQTTCoolHook {
 
@@ -33,8 +33,8 @@ public class SimpleCoolHook implements MQTTCoolHook {
      * This implementation always return {@code true}
      */
     @Override
-    public boolean canOpenSession(String sessionId, String user, String password,
-        @SuppressWarnings("rawtypes") Map clientContext,
+    public boolean canOpenSession(String sessionId, String user,
+        String password, @SuppressWarnings("rawtypes") Map clientContext,
         String clientPrincipal) throws HookException {
 
         return true;
@@ -51,7 +51,8 @@ public class SimpleCoolHook implements MQTTCoolHook {
      * This implementation always return {@code true}
      */
     @Override
-    public boolean canConnect(String sessionId, String clientId, String brokerAddress,
+    public boolean canConnect(String sessionId, String clientId,
+        String brokerAddress,
         MqttConnectOptions connectOptions) throws HookException {
 
         return true;
@@ -61,7 +62,8 @@ public class SimpleCoolHook implements MQTTCoolHook {
      * This implementation is void.
      */
     @Override
-    public void onDisconnection(String sessionId, String clientId, String brokerAddress) {
+    public void onDisconnection(String sessionId, String clientId,
+        String brokerAddress) {
 
     }
 
@@ -69,8 +71,8 @@ public class SimpleCoolHook implements MQTTCoolHook {
      * This implementation always return {@code true}
      */
     @Override
-    public boolean canPublish(String sessionId, String clientId, String brokerAddress,
-        MqttMessage message) throws HookException {
+    public boolean canPublish(String sessionId, String clientId,
+        String brokerAddress, MqttMessage message) throws HookException {
 
         return true;
     }
@@ -79,7 +81,8 @@ public class SimpleCoolHook implements MQTTCoolHook {
      * This implementation always return {@code true}
      */
     @Override
-    public boolean canSubscribe(String sessionId, String clientId, String brokerAddress,
+    public boolean canSubscribe(String sessionId, String clientId,
+        String brokerAddress,
         MqttSubscription subscription) throws HookException {
 
         return true;
@@ -89,7 +92,7 @@ public class SimpleCoolHook implements MQTTCoolHook {
      * This implementation is void.
      */
     @Override
-    public void onUnsubscribe(String sessionId, String clientId, String brokerAddress,
-        String topicFilter) {
+    public void onUnsubscribe(String sessionId, String clientId,
+        String brokerAddress, String topicFilter) {
     }
 }
