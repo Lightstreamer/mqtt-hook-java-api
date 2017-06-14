@@ -1,1 +1,1 @@
-# mqttcool-hook-sdk
+# MQTT.Cool Hook Java API
