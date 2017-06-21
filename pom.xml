@@ -3,18 +3,18 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cool.mqtt.hooks</groupId>
+    <groupId>cool.mqtt.hook</groupId>
     <artifactId>mqtt.cool-hook-api</artifactId>
-    <version>0.9.0</version>
+    <version>1.0.0</version>
 
     <name>MQTT.Cool Hook Java API</name>
     <url>https://github.com/MQTTCool/mqttcool-hook-java-api</url>
     <description>The Java API for developing MQTT.Cool Hooks.</description>
 
     <scm>
-        <connection>scm:git:https://github.com/MQTTCool/mqttcool-hook-java-api</connection>
-        <developerConnection>scm:git:https://github.com/MQTTCool/mqttcool-hook-java-api.git</developerConnection>
-        <url>:https://github.com/MQTTCool/mqttcool-hook-java-api</url>
+        <connection>scm:git:https://github.com/MQTTCool/mqtt.cool-hook-java-api</connection>
+        <developerConnection>scm:git:https://github.com/MQTTCool/mqtt.cool-hook-java-api.git</developerConnection>
+        <url>:https://github.com/MQTTCool/mqtt.cool-hook-java-api</url>
     </scm>
 
     <distributionManagement>
@@ -27,4 +27,24 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <doctitle>${project.name} ${project.version}</doctitle>
+                    <windowtitle>${project.artifactId} ${project.version}</windowtitle>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
