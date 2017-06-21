@@ -9,7 +9,7 @@ Once loaded inside the running server process, it will be able to intercept spec
 The API is part of the _MQTT.Cool Hook SDK_, which also offers the full Javadoc API Specification and other additional information. See the `<MQTT.COOL_HOME>/DOCS-SDKs/sdk_hook` folder of your local MQTT.Cool installation.
 
 # Documentation
-Take a look at Section `The MQTT.Cool Hook` of the [_MQTT.Cool Getting Started Guide_](http://www.lightstreamer.com/mqtt.cool/MQTT.Cool%20Getting%20Started%20Guide.pdf) for the core concepts of Hook development.
+Take a look at Section "The MQTT.Cool Hook" of the [_MQTT.Cool Getting Started Guide_](http://www.lightstreamer.com/mqtt.cool/MQTT.Cool%20Getting%20Started%20Guide.pdf) for the core concepts of Hook development.
 
 # Using the API
 
