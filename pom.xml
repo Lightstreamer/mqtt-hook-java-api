@@ -9,7 +9,7 @@
 
   <name>MQTT.Cool Hook Java API</name>
   <description>The Java API for developing MQTT.Cool Hooks.</description>
-  <url>https://github.com/MQTTCool/mqttcool-hook-java-api</url>
+  <url>https://github.com/MQTTCool/mqtt.cool-hook-java-api</url>
 
   <licenses>
     <license>
