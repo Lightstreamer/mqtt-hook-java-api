@@ -4,4 +4,4 @@ First public release.
 
 ### MQTT.Cool Compatibility Notes ###
 
-Compatible with MQTT.Cool since version 
+Compatible with MQTT.Cool since version 1.0.3
