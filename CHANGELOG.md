@@ -1,4 +1,4 @@
-## 1.0.0 build 145 (26 Jun 2017) ##
+## 1.0.0-alpha-01 build 152 (28 Jun 2017) ##
 
 First public release.
 
