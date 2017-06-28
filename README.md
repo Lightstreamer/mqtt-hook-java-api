@@ -17,8 +17,8 @@ Since the API is available from the Maven Central Repository, to setup your deve
 
 ```xml
 <dependency>
-    <groupId>cool.mqtt.hooks</groupId>
+    <groupId>cool.mqtt</groupId>
     <artifactId>mqtt.cool-hook-java-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-alpha-01</version>
 </dependency>
 ```
