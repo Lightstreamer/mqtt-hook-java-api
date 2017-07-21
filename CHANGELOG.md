@@ -1,7 +1,7 @@
-## 1.0.0-alpha-01 build 153 (28 Jun 2017) ##
+## 1.0.0 build 158 (21 Jul 2017) ##
 
 First public release.
 
 ### MQTT.Cool Compatibility Notes ###
 
-Compatible with MQTT.Cool since version 1.0.3
+Compatible with MQTT.Cool since version 1.0.3 b1
