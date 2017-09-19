@@ -27,52 +27,53 @@ package cool.mqtt.hooks;
  */
 public interface MqttConnectOptions {
 
-    /**
-     * Gets the {@code username} to be used for authenticating with the target
-     * MQTT broker.
-     * 
-     * @return the {@code username}, or {@code null} if no credential is
-     *         provided
-     */
-    String getUsername();
+  /**
+   * Gets the {@code username} to be used for authenticating with the target
+   * MQTT broker.
+   * 
+   * @return the {@code username}, or {@code null} if no credential is
+   *         provided
+   */
+  String getUsername();
 
-    /**
-     * Gets the {@code password} to be used for authenticating with the target
-     * MQTT broker.
-     * 
-     * @return the {@code password}, or {@code null} if no credential is
-     *         provided
-     */
-    String getPassword();
+  /**
+   * Gets the {@code password} to be used for authenticating with the target
+   * MQTT broker.
+   * 
+   * @return the {@code password}, or {@code null} if no credential is
+   *         provided
+   */
+  String getPassword();
 
-    /**
-     * Gets the connection timeout expressed in seconds.
-     * 
-     * @return the connection timeout expressed in seconds
-     */
-    int getConnectionTimeout();
+  /**
+   * Gets the connection timeout expressed in seconds.
+   * 
+   * @return the connection timeout expressed in seconds
+   */
+  int getConnectionTimeout();
 
-    /**
-     * Gets the keep alive interval expressed in seconds.
-     * 
-     * @return the keep alive interval expressed in seconds
-     */
-    int getKeepAlive();
+  /**
+   * Gets the keep alive interval expressed in seconds.
+   * 
+   * @return the keep alive interval expressed in seconds
+   */
+  int getKeepAlive();
 
-    /**
-     * Gets the {@code Will Message} to be stored by the MQTT broker.
-     * 
-     * @return the {@code Will Message} to be stored by the MQTT broker if any,
-     *         otherwise {@code null}
-     */
-    MqttMessage getWillMessage();
+  /**
+   * Gets the {@code Will Message} to be stored by the MQTT broker.
+   * 
+   * @return the {@code Will Message} to be stored by the MQTT broker if any,
+   *         otherwise {@code null}
+   */
+  MqttMessage getWillMessage();
 
-    /**
-     * Gets the <i>clean session</i> flag specified by the client on connection
-     * establishment.
-     * 
-     * @return {@code true} if the client does not want to make the Session
-     *         persistent, {@code false} otherwise
-     */
-    boolean isCleanSession();
+  /**
+   * Gets the <i>clean session</i> flag specified by the client on connection
+   * establishment.
+   * 
+   * @return {@code true} if the client does not want to make the Session
+   *         persistent, {@code false} otherwise
+   */
+  boolean isCleanSession();
+
 }
