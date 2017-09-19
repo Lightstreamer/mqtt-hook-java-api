@@ -13,86 +13,87 @@ import java.util.Map;
  */
 public class SimpleCoolHook implements MQTTCoolHook {
 
-    /**
-     * This implementation is void.
-     */
-    @Override
-    public void init(File configDir) throws HookException {
+  /**
+   * This implementation is void.
+   */
+  @Override
+  public void init(File configDir) throws HookException {
 
-    }
+  }
 
-    /**
-     * This implementation always return {@code null}
-     */
-    @Override
-    public MqttBrokerConfig resolveAlias(String alias) throws HookException {
-        return null;
-    }
+  /**
+   * This implementation always return {@code null}
+   */
+  @Override
+  public MqttBrokerConfig resolveAlias(String alias) throws HookException {
+    return null;
+  }
 
-    /**
-     * This implementation always return {@code true}
-     */
-    @Override
-    public boolean canOpenSession(String sessionId, String user,
-        String password, @SuppressWarnings("rawtypes") Map clientContext,
-        String clientPrincipal) throws HookException {
+  /**
+   * This implementation always return {@code true}
+   */
+  @Override
+  public boolean canOpenSession(String sessionId, String user,
+    String password, @SuppressWarnings("rawtypes") Map clientContext,
+    String clientPrincipal) throws HookException {
 
-        return true;
-    }
+    return true;
+  }
 
-    /**
-     * This implementation is void.
-     */
-    @Override
-    public void onSessionClose(String sessionId) {
-    }
+  /**
+   * This implementation is void.
+   */
+  @Override
+  public void onSessionClose(String sessionId) {
+  }
 
-    /**
-     * This implementation always return {@code true}
-     */
-    @Override
-    public boolean canConnect(String sessionId, String clientId,
-        String brokerAddress,
-        MqttConnectOptions connectOptions) throws HookException {
+  /**
+   * This implementation always return {@code true}
+   */
+  @Override
+  public boolean canConnect(String sessionId, String clientId,
+    String brokerAddress,
+    MqttConnectOptions connectOptions) throws HookException {
 
-        return true;
-    }
+    return true;
+  }
 
-    /**
-     * This implementation is void.
-     */
-    @Override
-    public void onDisconnection(String sessionId, String clientId,
-        String brokerAddress) {
+  /**
+   * This implementation is void.
+   */
+  @Override
+  public void onDisconnection(String sessionId, String clientId,
+    String brokerAddress) {
 
-    }
+  }
 
-    /**
-     * This implementation always return {@code true}
-     */
-    @Override
-    public boolean canPublish(String sessionId, String clientId,
-        String brokerAddress, MqttMessage message) throws HookException {
+  /**
+   * This implementation always return {@code true}
+   */
+  @Override
+  public boolean canPublish(String sessionId, String clientId,
+    String brokerAddress, MqttMessage message) throws HookException {
 
-        return true;
-    }
+    return true;
+  }
 
-    /**
-     * This implementation always return {@code true}
-     */
-    @Override
-    public boolean canSubscribe(String sessionId, String clientId,
-        String brokerAddress,
-        MqttSubscription subscription) throws HookException {
+  /**
+   * This implementation always return {@code true}
+   */
+  @Override
+  public boolean canSubscribe(String sessionId, String clientId,
+    String brokerAddress,
+    MqttSubscription subscription) throws HookException {
 
-        return true;
-    }
+    return true;
+  }
 
-    /**
-     * This implementation is void.
-     */
-    @Override
-    public void onUnsubscribe(String sessionId, String clientId,
-        String brokerAddress, String topicFilter) {
-    }
+  /**
+   * This implementation is void.
+   */
+  @Override
+  public void onUnsubscribe(String sessionId, String clientId,
+    String brokerAddress, String topicFilter) {
+  }
+
 }
