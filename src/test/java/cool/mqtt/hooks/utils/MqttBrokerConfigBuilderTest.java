@@ -1,10 +1,5 @@
 package cool.mqtt.hooks.utils;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
@@ -13,7 +8,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import cool.mqtt.hooks.MqttBrokerConfig;
 import cool.mqtt.hooks.MqttMessage;
 import cool.mqtt.hooks.QoS;
-import cool.mqtt.hooks.utils.MqttBrokerConfigBuilder;
+
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class MqttBrokerConfigBuilderTest {
 
@@ -42,15 +41,9 @@ public class MqttBrokerConfigBuilderTest {
 
   @Test
   public void shouldBuildConfigWithCustomValues() {
-    MqttBrokerConfig config = builder
-      .username("username")
-      .password("password")
-      .clientIdPrefix("client_id_prefix")
-      .connectionTimeout(5)
-      .keepAlive(10)
-      .willMessage("topic", new byte[] { 1, 2, 3 }, QoS.AT_MOST_ONCE,
-        true)
-      .build();
+    MqttBrokerConfig config = builder.username("username").password("password")
+        .clientIdPrefix("client_id_prefix").connectionTimeout(5).keepAlive(10)
+        .willMessage("topic", new byte[] {1, 2, 3}, QoS.AT_MOST_ONCE, true).build();
 
     assertThat(config.getAddress(), is("tcp://localhost:1883"));
     assertThat(config.getClientIdPrefix(), is("client_id_prefix"));
@@ -63,8 +56,7 @@ public class MqttBrokerConfigBuilderTest {
     assertThat(willMessage, notNullValue());
     assertThat(willMessage.getTopicName(), is("topic"));
     assertThat(willMessage.getQos(), is(QoS.AT_MOST_ONCE));
-    assertThat(willMessage.getApplicationMessage(),
-      is(new byte[] { 1, 2, 3 }));
+    assertThat(willMessage.getApplicationMessage(), is(new byte[] {1, 2, 3}));
   }
 
   @Test
@@ -72,8 +64,7 @@ public class MqttBrokerConfigBuilderTest {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(is("Invalid topic"));
 
-    builder.willMessage(null, new byte[] { 1, 2, 3 }, QoS.AT_MOST_ONCE,
-      true);
+    builder.willMessage(null, new byte[] {1, 2, 3}, QoS.AT_MOST_ONCE, true);
   }
 
   @Test
@@ -81,8 +72,7 @@ public class MqttBrokerConfigBuilderTest {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(is("Invalid topic"));
 
-    builder.willMessage("", new byte[] { 1, 2, 3 }, QoS.AT_MOST_ONCE,
-      true);
+    builder.willMessage("", new byte[] {1, 2, 3}, QoS.AT_MOST_ONCE, true);
   }
 
   @Test
@@ -91,7 +81,7 @@ public class MqttBrokerConfigBuilderTest {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(is("Invalid QoS"));
 
-    builder.willMessage("topic", new byte[] { 1, 2, 3 }, null, false);
+    builder.willMessage("topic", new byte[] {1, 2, 3}, null, false);
   }
 
 }
