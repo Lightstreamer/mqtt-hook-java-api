@@ -5,8 +5,7 @@ import cool.mqtt.hooks.MqttMessage;
 import cool.mqtt.hooks.QoS;
 
 /**
- * Simple builder class to simplify the making of an {@link MqttBrokerConfig}
- * instance.
+ * Simple builder class to simplify the making of an {@link MqttBrokerConfig} instance.
  */
 public class MqttBrokerConfigBuilder {
 
@@ -16,7 +15,7 @@ public class MqttBrokerConfigBuilder {
 
   private String password;
 
-  private String will_topic;
+  private String willTopic;
 
   private Integer connectionTimeout;
 
@@ -24,18 +23,16 @@ public class MqttBrokerConfigBuilder {
 
   private String clientIdPrefix;
 
-  private byte[] will_applcationMessage;
+  private byte[] willApplicationMessage;
 
-  private QoS will_qos;
+  private QoS willQos;
 
-  private boolean will_retain;
+  private boolean willRetain;
 
   /**
-   * Creates a {@code MqttBrokerConfigBuilder} initialized with the specified
-   * MQTT broker address
+   * Creates a {@code MqttBrokerConfigBuilder} initialized with the specified MQTT broker address.
    * 
-   * @param address
-   *          the address of the MQTT broker
+   * @param address the address of the MQTT broker
    */
   public MqttBrokerConfigBuilder(String address) {
     this.address = address;
@@ -44,8 +41,7 @@ public class MqttBrokerConfigBuilder {
   /**
    * Sets the {@code username} on this builder.
    * 
-   * @param username
-   *          the username
+   * @param username the username
    * @return a reference to this object
    * @see MqttBrokerConfig#getUsername()
    */
@@ -57,8 +53,7 @@ public class MqttBrokerConfigBuilder {
   /**
    * Sets the {@code password} on this builder.
    * 
-   * @param password
-   *          the password
+   * @param password the password
    * @return a reference to this object
    * @see MqttBrokerConfig#getPassword()
    */
@@ -69,30 +64,23 @@ public class MqttBrokerConfigBuilder {
 
   /**
    * Sets the <i>Will Message</i> on this builder.
-   * <p>
-   * If the provided {@code topic} is {@code null} or a empty string, invoking
-   * {@link MqttBrokerConfig#getWillMessage()} on the
-   * {@code MqttBrokerConfig}s
-   * instance built through this builder will return {@code null}.
-   * <p>
    * 
-   * @param topic
-   *          the topic name
-   * @param applicationMessage
-   *          the carried Application Message
-   * @param qos
-   *          the Quality of Service
-   * @param retain
-   *          the retained flag
+   * <p>If the provided {@code topic} is either {@code null} or empty string, invoking
+   * {@link MqttBrokerConfig#getWillMessage()} on the {@code MqttBrokerConfig} instance built
+   * through this builder will return {@code null}.
+   * 
+   * @param topic the topic name
+   * @param applicationMessage the carried Application Message
+   * @param qos the Quality of Service
+   * @param retain the retained flag
    * @return a reference to this object
-   * @throws IllegalArgumentException
-   *           if the specified {@code qos} is {@code null} and
-   *           {@code topic} is a valid topic name
+   * @throws IllegalArgumentException if the specified {@code qos} is {@code null} and {@code topic}
+   *         is a valid topic name
    * @see MqttMessage
    * @see MqttBrokerConfig#getWillMessage()
    */
-  public MqttBrokerConfigBuilder willMessage(String topic,
-    byte[] applicationMessage, QoS qos, boolean retain) {
+  public MqttBrokerConfigBuilder willMessage(String topic, byte[] applicationMessage, QoS qos,
+      boolean retain) {
 
     if (topic == null || (topic != null && topic.length() == 0)) {
       throw new IllegalArgumentException("Invalid topic");
@@ -102,18 +90,17 @@ public class MqttBrokerConfigBuilder {
       throw new IllegalArgumentException("Invalid QoS");
     }
 
-    this.will_topic = topic;
-    this.will_applcationMessage = applicationMessage;
-    this.will_qos = qos;
-    this.will_retain = retain;
+    this.willTopic = topic;
+    this.willApplicationMessage = applicationMessage;
+    this.willQos = qos;
+    this.willRetain = retain;
     return this;
   }
 
   /**
    * Sets the keep alive interval expressed in seconds on this builder.
    * 
-   * @param keepAlive
-   *          the keep alive interval in seconds
+   * @param keepAlive the keep alive interval in seconds
    * @return a reference to this object
    * @see MqttBrokerConfig#getKeepAlive()
    */
@@ -125,8 +112,7 @@ public class MqttBrokerConfigBuilder {
   /**
    * Sets the connection timeout expressed in seconds on this builder.
    * 
-   * @param connectionTimeout
-   *          the connection timeout in seconds
+   * @param connectionTimeout the connection timeout in seconds
    * @return a reference to this object
    * @see MqttBrokerConfig#getConnectionTimeout()
    */
@@ -136,11 +122,9 @@ public class MqttBrokerConfigBuilder {
   }
 
   /**
-   * Sets the ClientId prefix to be used for shared connection on this
-   * builder.
+   * Sets the ClientId prefix to be used for shared connection on this builder.
    * 
-   * @param clientIdPrefix
-   *          the ClientId prefix
+   * @param clientIdPrefix the ClientId prefix
    * @return a reference to this object
    * @see MqttBrokerConfig#getClientIdPrefix()
    */
@@ -150,8 +134,8 @@ public class MqttBrokerConfigBuilder {
   }
 
   /**
-   * Returns a new {@code MqttBrokerConfig} instance initialized with all
-   * parameters provided to this builder.
+   * Returns a new {@code MqttBrokerConfig} instance initialized with all parameters provided to
+   * this builder.
    * 
    * @return a {@code MqttBrokerConfig} instance
    */
@@ -161,12 +145,12 @@ public class MqttBrokerConfigBuilder {
       @Override
       public MqttMessage getWillMessage() {
         MqttMessage willMessage = null;
-        if (will_topic != null) {
+        if (willTopic != null) {
           return new MqttMessage() {
 
             @Override
             public boolean isRetained() {
-              return will_retain;
+              return willRetain;
             }
 
             @Override
@@ -176,17 +160,17 @@ public class MqttBrokerConfigBuilder {
 
             @Override
             public String getTopicName() {
-              return will_topic;
+              return willTopic;
             }
 
             @Override
             public QoS getQos() {
-              return will_qos;
+              return willQos;
             }
 
             @Override
             public byte[] getApplicationMessage() {
-              return will_applcationMessage;
+              return willApplicationMessage;
             }
           };
         }
