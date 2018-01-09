@@ -1,9 +1,9 @@
-## 1.1.0 build 174 (29 Dec 2017) ##
+## 1.1.0 build 175 (9 Jan 2018) ##
 
 ### Improvements
 
-Add `SecurityParams` interface for providing parameters relative to theù
-setting up of encrypted connections.
+Add `SecurityParams` class for providing parameters relative to the setting
+up of encrypted connections.
 
 Add required methods to `MqttBrokerConfig` and `MqttBokerConfigBuilder` 
 for handling new `SecurityParams` class.
