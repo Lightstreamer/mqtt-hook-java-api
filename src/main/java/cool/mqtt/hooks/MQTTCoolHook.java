@@ -7,7 +7,7 @@ import java.util.Map;
  * Interface that defines an <i>MQTT&#46;Cool Hook</i>. By implementing this interface it is
  * possible to create a custom pluggable component for extending the authorization and
  * authentication functionalities of MQTT&#46;Cool.
- * 
+ *
  * <p>Hook allows to intercept and authorize the following requests:
  * <ul>
  * <li>Session opening.</li>
@@ -15,7 +15,7 @@ import java.util.Map;
  * <li>Subscribing/unsubscribing to/from topics.</li>
  * <li>Messages publishing.</li>
  * </ul>
- * 
+ *
  * <p>In addition, Hook could be notified about the following events:
  * <ul>
  * <li>Hook initialization.</li>
@@ -29,7 +29,7 @@ public interface MQTTCoolHook {
 
   /**
    * Called during the MQTT&#46;Cool initialization process.
-   * 
+   *
    * <p>Any setup logic should be implemented here.
    *
    * @param configDir the <code>&lt;MQTT&#46;COOL_HOME&gt;/mqtt_connectors</code> directory
@@ -54,7 +54,7 @@ public interface MQTTCoolHook {
 
   /**
    * Checks whether the client is authorized to open a new session against MQTT&#46;Cool.
-   * 
+   *
    * <p>The requested session is the one carried by the MQTT&#46;Cool connection between the
    * MQTT&#46;Cool JS client and MQTT&#46;Cool, and <strong>is not</strong> related to the MQTT
    * connection between MQTT&#46;Cool and any MQTT broker. Full client context is passed, together
@@ -93,8 +93,7 @@ public interface MQTTCoolHook {
    *        supplied on the socket connection used to issue the request that originated the call; it
    *        can be {@code null} if client has not authenticated itself or the authentication has
    *        failed
-   * @return {@code true} if this Hook authorizes the client to open the session, {@code false}
-   *         otherwise
+   * @return {@code true} if this Hook authorizes the client to open the session
    * @throws HookException if this Hook runs against a specific issue while performing authorization
    *         checks (for example, while validating the provided credentials with an external
    *         service)
@@ -112,11 +111,11 @@ public interface MQTTCoolHook {
   /**
    * Checks whether the client is authorized to connect to the MQTT broker hosted at the specified
    * address.
-   * 
+   *
    * <p>For a <i>shared connection</i>, this method is invoked on each connection request made by
    * every <i>joining</i> client, even if a single MQTT connection is actually held to the target
    * MQTT broker.
-   * 
+   *
    * @param sessionId the unique identifier of the client session
    * @param clientId the client identifier as sent by the client, namely:
    *        <ul>
@@ -129,8 +128,7 @@ public interface MQTTCoolHook {
    *        </ul>
    * @param brokerAddress the address of the MQTT broker to connect to
    * @param connectOptions the set of options being used to connect to the target MQTT broker
-   * @return {@code true} if this Hook authorizes the client to connect to the target MQTT broker,
-   *         {@code false} otherwise
+   * @return {@code true} if this Hook authorizes the client to connect to the target MQTT broker
    * @throws HookException if this Hook runs against a specific issue while performing authorization
    *         checks
    */
@@ -139,7 +137,7 @@ public interface MQTTCoolHook {
 
   /**
    * Called to notify the Hook that a client has been disconnected from the specified MQTT broker.
-   * 
+   *
    * <p>Note that the method is also invoked in case of session interruption (for example, due to
    * any network issue) while the client is currently connected: if it is the case, both
    * {@code onSessionClose} and {@code onDisconnection} will be triggered.
@@ -160,8 +158,7 @@ public interface MQTTCoolHook {
    *        {@link #canConnect})
    * @param brokerAddress the address of the MQTT broker connected to
    * @param message the message being requested to be published to the specified MQTT broker
-   * @return {@code true} if this Hook authorizes the client to publish the given message,
-   *         {@code false} otherwise
+   * @return {@code true} if this Hook authorizes the client to publish the given message
    * @throws HookException if this Hook runs against a specific issue while performing authorization
    *         checks
    */
@@ -177,8 +174,7 @@ public interface MQTTCoolHook {
    *        {@link #canConnect})
    * @param brokerAddress the address of the MQTT broker connected to
    * @param subscription the subscription being requested to be sent to the specified MQTT broker
-   * @return {@code true} if this Hook authorizes the client to send the given subscription,
-   *         {@code false} otherwise
+   * @return {@code true} if this Hook authorizes the client to send the given subscription
    * @throws HookException if this Hook runs against a specific issue while performing authorization
    *         checks
    */
