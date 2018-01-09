@@ -11,7 +11,7 @@ public class HookException extends Exception {
 
   /**
    * Constructs an {@code HookException} with the specified error code and detail message.
-   * 
+   *
    * @param code the error code that can be used to distinguish the kind of problem. It must be a
    *        non negative integer, otherwise it will be replaced by {@code 0}
    * @param message the detail message to be forwarded to the Client. It can be null. The message
