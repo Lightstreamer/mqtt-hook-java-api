@@ -45,7 +45,7 @@ public class MqttBrokerConfigBuilder {
   private char[] privateKeyPassword;
 
   /**
-   * Creates a {@code MqttBrokerConfigBuilder} initialized with the specified MQTT broker address.
+   * Creates an {@code MqttBrokerConfigBuilder} initialized with the specified MQTT broker address.
    *
    * @param address the address of the MQTT broker
    */
