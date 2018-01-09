@@ -133,7 +133,7 @@ public interface MqttBrokerConfig {
    * secure channel using the following default settings:
    *
    * <ul>
-   * <li>TLSv1.2 as security protocol</li>
+   * <li>TLSv1.2 as security protocol.</li>
    * <li>Default truststore and keystore, determined according to the <a href=
    * "https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/JSSERefGuide.html">JSSE
    * Reference Guide</a>.</li>
