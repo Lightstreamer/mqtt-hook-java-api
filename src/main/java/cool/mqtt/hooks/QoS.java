@@ -31,7 +31,7 @@ public enum QoS {
 
   /**
    * Gets the Quality of Service level {@code int} value.
-   * 
+   *
    * @return the Quality of Service level, from 0 ({@code AT_MOST_ONCE}) to 2 ({@code EXACTLY_ONCE}
    *         once)
    */

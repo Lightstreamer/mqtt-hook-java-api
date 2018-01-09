@@ -7,7 +7,7 @@ import java.util.Map;
  * Simple skeletal implementation of the {@code MQTTCoolHook} interface, meant as a base class to be
  * extended in order to minimize the effort required to provide a full implementation of a custom
  * Hook.
- * 
+ *
  * <p>All methods provide a trivial implementation, therefore subclasses must override those methods
  * for which a specific behavior is really needed.
  */
