@@ -3,6 +3,9 @@ package cool.mqtt.hooks.utils;
 import cool.mqtt.hooks.MqttBrokerConfig;
 import cool.mqtt.hooks.MqttMessage;
 import cool.mqtt.hooks.QoS;
+import cool.mqtt.hooks.SecurityParams;
+
+import java.nio.file.Path;
 
 /**
  * Simple builder class to simplify the making of an {@link MqttBrokerConfig} instance.
@@ -29,9 +32,21 @@ public class MqttBrokerConfigBuilder {
 
   private boolean willRetain;
 
+  private String securityProtocol;
+
+  private Path truststorePath;
+
+  private char[] truststorePassword;
+
+  private Path keystorePath;
+
+  private char[] keystorePassword;
+
+  private char[] privateKeyPassword;
+
   /**
    * Creates a {@code MqttBrokerConfigBuilder} initialized with the specified MQTT broker address.
-   * 
+   *
    * @param address the address of the MQTT broker
    */
   public MqttBrokerConfigBuilder(String address) {
@@ -40,7 +55,7 @@ public class MqttBrokerConfigBuilder {
 
   /**
    * Sets the {@code username} on this builder.
-   * 
+   *
    * @param username the username
    * @return a reference to this object
    * @see MqttBrokerConfig#getUsername()
@@ -52,7 +67,7 @@ public class MqttBrokerConfigBuilder {
 
   /**
    * Sets the {@code password} on this builder.
-   * 
+   *
    * @param password the password
    * @return a reference to this object
    * @see MqttBrokerConfig#getPassword()
@@ -64,18 +79,17 @@ public class MqttBrokerConfigBuilder {
 
   /**
    * Sets the <i>Will Message</i> on this builder.
-   * 
-   * <p>If the provided {@code topic} is either {@code null} or empty string, invoking
-   * {@link MqttBrokerConfig#getWillMessage()} on the {@code MqttBrokerConfig} instance built
-   * through this builder will return {@code null}.
-   * 
+   *
    * @param topic the topic name
    * @param applicationMessage the carried Application Message
    * @param qos the Quality of Service
    * @param retain the retained flag
    * @return a reference to this object
-   * @throws IllegalArgumentException if the specified {@code qos} is {@code null} and {@code topic}
-   *         is a valid topic name
+   * @throws IllegalArgumentException in the following cases:
+   *         <ul>
+   *         <li>the specified {@code qos} is {@code null}</li>
+   *         <li>the specified {@code topic} is either {@code null} or empty</li>
+   *         </ul>
    * @see MqttMessage
    * @see MqttBrokerConfig#getWillMessage()
    */
@@ -99,7 +113,7 @@ public class MqttBrokerConfigBuilder {
 
   /**
    * Sets the keep alive interval expressed in seconds on this builder.
-   * 
+   *
    * @param keepAlive the keep alive interval in seconds
    * @return a reference to this object
    * @see MqttBrokerConfig#getKeepAlive()
@@ -122,8 +136,8 @@ public class MqttBrokerConfigBuilder {
   }
 
   /**
-   * Sets the ClientId prefix to be used for shared connection on this builder.
-   * 
+   * Sets the ClientId prefix (to be used for shared connection) on this builder.
+   *
    * @param clientIdPrefix the ClientId prefix
    * @return a reference to this object
    * @see MqttBrokerConfig#getClientIdPrefix()
@@ -134,10 +148,97 @@ public class MqttBrokerConfigBuilder {
   }
 
   /**
+   * Sets the standard name of the security protocol on this builder.
+   * 
+   * <p>The standard name must be specified according to
+   * <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#SSLContext">Java Cryptography Architecture Standard Algorithm Name</a>.
+   *
+   * @param securityProtocol the security protocol name
+   * @return a reference to this object
+   * @see SecurityParams#getSecurityProtocol()
+   */
+  public MqttBrokerConfigBuilder securityProtocol(String securityProtocol) {
+    this.securityProtocol = securityProtocol;
+    return this;
+  }
+
+  /**
+   * Sets the absolute path to the <i>JKS truststore</i> on this builder.
+   *
+   * @param truststorePath the absolute to the <i>JKS truststore</i>
+   * @return a reference to this object
+   * @see SecurityParams#getTruststorePath()
+   */
+  public MqttBrokerConfigBuilder truststorePath(Path truststorePath) {
+    this.truststorePath = truststorePath;
+    return this;
+  }
+
+  /**
+   * Sets the password for the <i>JKS truststore</i> on this builder.
+   *
+   * @param truststorePassword the password for the <i>JKS truststore</i>
+   * @return a reference to this object
+   * @see SecurityParams#getTruststorePassword()
+   */
+  public MqttBrokerConfigBuilder truststorePassword(char[] truststorePassword) {
+    this.truststorePassword = truststorePassword;
+    return this;
+  }
+
+  /**
+   * Sets the absolute path to the <i>JKS keystore</i> on this builder.
+   * 
+   * @param keystorePath the absolute path to the <i>JKS keystore</i>
+   * @return a reference to this object
+   * @see SecurityParams#getKeystorePath()
+   */
+  public MqttBrokerConfigBuilder keystorePath(Path keystorePath) {
+    this.keystorePath = keystorePath;
+    return this;
+  }
+
+  /**
+   * Sets the password for the <i>JKS keystore</i> on this builder.
+   *
+   * @param keystorePassword the password for the <i>JKS keystore</i>.
+   * @return a reference to this object
+   * @see SecurityParams#getKeystorePassword()
+   */
+  public MqttBrokerConfigBuilder keystorePassword(char[] keystorePassword) {
+    this.keystorePassword = keystorePassword;
+    return this;
+  }
+
+  /**
+   * Sets the password for the private key (stored into the <i>JSK keystore</i>) on this builder.
+   *
+   * @param privateKeyPassword the password for the private key stored into the <i>JSK keystore</i>
+   * @return a reference to this object
+   * @see SecurityParams#getPrivateKeyPassword()
+   */
+  public MqttBrokerConfigBuilder privateKeyPassword(char[] privateKeyPassword) {
+    this.privateKeyPassword = privateKeyPassword;
+    return this;
+  }
+
+  /**
    * Returns a new {@code MqttBrokerConfig} instance initialized with all parameters provided to
    * this builder.
    * 
-   * @return a {@code MqttBrokerConfig} instance
+   * <p>Note that the returned {@code MqttBrokerConfig} contains a <i>Will Message</i> only if a
+   * valid topic has been explicitly provided through
+   * {@link #willMessage(String, byte[], QoS, boolean)}.
+   * 
+   * <p>Similarly, the {@code MqttBrokerConfig} instance contains a {@code SecurityParams} object
+   * only if at least one of the following parameters has been explicitly provided:
+   * <ul>
+   * <li>the security protocol (through {@link #securityProtocol(String)})</li>
+   * <li>the truststore path (through {@link #truststorePath(Path)})</li>
+   * <li>the keystore path (through {@link #keystorePath(Path)})</li>
+   * </ul>
+   * 
+   * @return an {@code MqttBrokerConfig} instance
    */
   public MqttBrokerConfig build() {
     return new MqttBrokerConfig() {
@@ -205,6 +306,46 @@ public class MqttBrokerConfigBuilder {
       @Override
       public String getAddress() {
         return address;
+      }
+
+      @Override
+      public SecurityParams getSecurityParams() {
+        if ((securityProtocol != null && securityProtocol.length() != 0) || truststorePath != null
+            || keystorePath != null) {
+          return new SecurityParams() {
+
+            @Override
+            public String getSecurityProtocol() {
+              return securityProtocol;
+            }
+
+            @Override
+            public Path getTruststorePath() {
+              return truststorePath;
+            }
+
+            @Override
+            public char[] getTruststorePassword() {
+              return truststorePassword;
+            }
+
+            @Override
+            public Path getKeystorePath() {
+              return keystorePath;
+            }
+
+            @Override
+            public char[] getKeystorePassword() {
+              return keystorePassword;
+            }
+
+            @Override
+            public char[] getPrivateKeyPassword() {
+              return privateKeyPassword;
+            }
+          };
+        }
+        return null;
       }
     };
   }
