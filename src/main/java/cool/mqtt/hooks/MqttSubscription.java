@@ -8,7 +8,7 @@ public interface MqttSubscription {
 
   /**
    * Gets the topic filter indicating one or more topics to which the client subscribe.
-   * 
+   *
    * @return the topic filter
    */
   String getTopicFilter();
@@ -16,7 +16,7 @@ public interface MqttSubscription {
   /**
    * Gets the maximum Quality Of Service level which the target MQTT broker is allowed to send
    * Application Messages.
-   * 
+   *
    * @return the maximum Quality Of Service level
    */
   QoS getQos();
