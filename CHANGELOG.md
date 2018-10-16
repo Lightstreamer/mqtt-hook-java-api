@@ -1,81 +1,77 @@
-## 1.2.0 build 221 (17 Oct 2018) ##
+1.2.0 build 222 (17 Oct 2018)
+-----------------------------
 
-### Improvements
+**Improvements**
 
-Increased minimum required Java version to 8.
+- Increased minimum required Java version to 8.
+- Updated link to new `MQTT.Cool Getting Started Guide` URL in API Specification.
 
-Updated link to new `MQTT.Cool Getting Started Guide` URL in API Specification.
+**Bug Fixes**
 
-### Bug Fixes
-
-Fixed wrong reference to the default ClientId prefix in documentation of the
+- Fixed wrong reference to the default ClientId prefix in documentation of the
 `MqttBrokerConfig.getClientIdPrefix()` method.
 
-### MQTT.Cool Compatibility Notes ###
+**MQTT.Cool Compatibility Notes**
 
 Compatible with MQTT.Cool since version 1.0.3 b3
 
 
 
-## 1.1.0 build 175 (9 Jan 2018)
+1.1.0 build 175 (9 Jan 2018)
+----------------------------
 
-### Improvements
+**Improvements**
 
-Added `SecurityParams` class for providing parameters relative to the setting
+- Added `SecurityParams` class for providing parameters relative to the setting
 up of encrypted connections.
-
-Added required methods to `MqttBrokerConfig` and `MqttBokerConfigBuilder` 
+- Added required methods to `MqttBrokerConfig` and `MqttBokerConfigBuilder`
 for handling new `SecurityParams` class.
-
-Updated API Specification to reflect changes made necessary by
+- Updated API Specification to reflect changes made necessary by
 `SecurityParams` management.
-
-Done other minor changes in API Specification to improve readability.
-In particular:
-* Clarified which schemas can be used in the URI returned by
+- Done other minor changes in API Specification to improve readability.
+  In particular:
+  - Clarified which schemas can be used in the URI returned by
 `MqttBrokerConfig.getAddress()`.
-* Improve description of `MqttBrokerConfig.build()`.
+  - Improve description of `MqttBrokerConfig.build()`.
+- Updated JUnit test cases.
 
-Updated JUnit test cases.
+**Bug Fixes**
 
-### Bug Fixes
-
-Fixed API Specification. In particular:
-* Fixed typos.
-* Fixed conditions which actually throw `IllegalArgumentsException` in 
+- Fixed API Specification. In particular:
+  - Fixed typos.
+  - Fixed conditions which actually throw `IllegalArgumentsException` in
 the `MqttBrokerConfigBuilder.willMessage(...)` method.
-* Removed wrong statement in the
+  - Removed wrong statement in the
 `MqttBrokerConfigBuilder.willMessage(...)` method about the behavior of
 `MqttBrokerConfig.getWillMessage()`.
 
-### MQTT.Cool Compatibility Notes ###
+**MQTT.Cool Compatibility Notes**
 
 Compatible with MQTT.Cool since version 1.0.3 b3
 
 
 
-## 1.0.1 build 165 (22 Sep 2017) ##
+1.0.1 build 165 (22 Sep 2017)
+-----------------------------
 
-### Improvements
+**Improvements**
 
-Added formal checks while setting the will message trough
-`MqttBrokerConfigBuilder`. 
+- Added formal checks while setting the will message trough
+`MqttBrokerConfigBuilder`.
+- Added JUnit test cases for the concrete classes provided by the API.
+- Improved code formatting.
 
-Added JUnit test cases for the concrete classes provided by the API.
-
-Improved code formatting.
-
-### MQTT.Cool Compatibility Notes ###
+**MQTT.Cool Compatibility Notes**
 
 Compatible with MQTT.Cool since version 1.0.3 b1
 
 
 
-## 1.0.0 build 159 (2 Aug 2017) ##
+1.0.0 build 159 (2 Aug 2017)
+----------------------------
 
 First public release.
 
-### MQTT.Cool Compatibility Notes ###
+**MQTT.Cool Compatibility Notes**
 
 Compatible with MQTT.Cool since version 1.0.3 b1
-
