@@ -1,31 +1,50 @@
-## 1.1.0 build 175 (9 Jan 2018) ##
+## 1.2.0 build 221 (17 Oct 2018) ##
 
 ### Improvements
 
-Add `SecurityParams` class for providing parameters relative to the setting
-up of encrypted connections.
+Increased minimum required Java version to 8.
 
-Add required methods to `MqttBrokerConfig` and `MqttBokerConfigBuilder` 
-for handling new `SecurityParams` class.
-
-Update API Specifications to reflect changes made necessary by
-`SecurityParams` management.
-
-Do other minor changes in API Specifications to improve readability.
-In particular:
-* Clarify which schemas can be used in the URI returned by
-`MqttBrokerConfig.getAddress()`.
-* Improve description of `MqttBrokerConfig.build()`.
-
-Update JUnit test cases.
+Updated link to new `MQTT.Cool Getting Started Guide` URL in API Specification.
 
 ### Bug Fixes
 
-Fix API Specifications. In particular:
-* Fix typos.
-* Fix conditions which actually throw `IllegalArgumentsException` in 
+Fixed wrong reference to the default ClientId prefix in documentation of the
+`MqttBrokerConfig.getClientIdPrefix()` method.
+
+### MQTT.Cool Compatibility Notes ###
+
+Compatible with MQTT.Cool since version 1.0.3 b3
+
+
+
+## 1.1.0 build 175 (9 Jan 2018)
+
+### Improvements
+
+Added `SecurityParams` class for providing parameters relative to the setting
+up of encrypted connections.
+
+Added required methods to `MqttBrokerConfig` and `MqttBokerConfigBuilder` 
+for handling new `SecurityParams` class.
+
+Updated API Specification to reflect changes made necessary by
+`SecurityParams` management.
+
+Done other minor changes in API Specification to improve readability.
+In particular:
+* Clarified which schemas can be used in the URI returned by
+`MqttBrokerConfig.getAddress()`.
+* Improve description of `MqttBrokerConfig.build()`.
+
+Updated JUnit test cases.
+
+### Bug Fixes
+
+Fixed API Specification. In particular:
+* Fixed typos.
+* Fixed conditions which actually throw `IllegalArgumentsException` in 
 the `MqttBrokerConfigBuilder.willMessage(...)` method.
-* Remove wrong statement in the
+* Removed wrong statement in the
 `MqttBrokerConfigBuilder.willMessage(...)` method about the behavior of
 `MqttBrokerConfig.getWillMessage()`.
 
@@ -39,12 +58,12 @@ Compatible with MQTT.Cool since version 1.0.3 b3
 
 ### Improvements
 
-Add formal checks while setting the will message trough
+Added formal checks while setting the will message trough
 `MqttBrokerConfigBuilder`. 
 
-Add JUnit test cases for the concrete classes provided by the API.
+Added JUnit test cases for the concrete classes provided by the API.
 
-Improve code formatting.
+Improved code formatting.
 
 ### MQTT.Cool Compatibility Notes ###
 
