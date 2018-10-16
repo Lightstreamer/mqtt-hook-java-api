@@ -54,7 +54,7 @@ public interface MqttBrokerConfig {
    * shared connections may exist for the same MQTT broker.
    *
    * <p>In case of blank return value (that is, an empty, whitespace or {@code null} string), the
-   * default ClientId prefix {@code "CLIENT_ID_PREFIX_PLACEHOLDER"} will be used.
+   * default ClientId prefix {@code "MQTT_Cool"} will be used.
    *
    * @return the ClientId prefix, or a blank value (as defined above) if the default ClientId prefix
    *         is accepted
