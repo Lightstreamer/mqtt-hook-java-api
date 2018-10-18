@@ -11,7 +11,7 @@
 
 - Fixed wrong reference to the default ClientId prefix in documentation of the
 `MqttBrokerConfig.getClientIdPrefix()` method.
-- Remove from API Specification unsupported *HTML5* tags.
+- Removed from API Specification unsupported *HTML5* tags.
 
 **MQTT.Cool Compatibility Notes**
 
