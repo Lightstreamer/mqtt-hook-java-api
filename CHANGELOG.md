@@ -1,15 +1,17 @@
-1.2.0 build 222 (17 Oct 2018)
------------------------------
+1.2.0 build 250 (18 Oct 2018)
+----------------------------------------------------------------
 
 **Improvements**
 
 - Increased minimum required Java version to 8.
 - Updated link to new `MQTT.Cool Getting Started Guide` URL in API Specification.
+- Updated `pom.xml` by upgrading `maven-javadoc-plugin` to version 3.0.1.
 
 **Bug Fixes**
 
 - Fixed wrong reference to the default ClientId prefix in documentation of the
 `MqttBrokerConfig.getClientIdPrefix()` method.
+- Remove from API Specification unsupported *HTML5* tags.
 
 **MQTT.Cool Compatibility Notes**
 
