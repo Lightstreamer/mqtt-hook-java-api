@@ -8,12 +8,12 @@ package cool.mqtt.hooks;
  * <ul>
  * <li>{@code username} and {@code password} used for authenticating the client: if provided, they
  * will take precedence over the ones which may have been defined in
- * <tt>mqtt_master_connector_conf.xml</tt> or supplied through the {@code MqttBrokerConfig} instance
+ * {@code mqtt_master_connector_conf.xml } or supplied through the {@code MqttBrokerConfig} instance
  * returned by an invocation of {@link MQTTCoolHook#resolveAlias(String)}.</li>
  * <li>{@code clean session} flag, which specifies how to handle the Session Persistence.</li>
  * <li>{@code Will Message}, which allows to publish a message in case of connection issues on the
  * client side; if provided, it will take precedence over the one which may have been defined in
- * <tt>mqtt_master_connector_conf.xml</tt> or supplied through the {@code MqttBrokerConfig} instance
+ * {@code mqtt_master_connector_conf.xml} or supplied through the {@code MqttBrokerConfig} instance
  * returned by an invocation of {@link MQTTCoolHook#resolveAlias(String)}.</li>
  * </ul>
  */

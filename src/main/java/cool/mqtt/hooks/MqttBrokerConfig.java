@@ -6,7 +6,7 @@ package cool.mqtt.hooks;
  *
  * <p>The Hook is expected to supply an instance of {@code MqttBrokerConfig} (through an invocation
  * of {@link MQTTCoolHook#resolveAlias(String)}) if no static entries have been provided in the
- * <tt>mqtt_master_connector_conf.xml</tt> file for a given connection alias.
+ * {@code mqtt_master_connector_conf.xml} file for a given connection alias.
  *
  * <p>The configuration is made up of:
  * <ul>
@@ -85,7 +85,7 @@ public interface MqttBrokerConfig {
    * Gets the {@code username} for authenticating with the MQTT broker.
    *
    * <p>If the MQTT broker does not require authentication, this method should return a {@code null}
-   * value. Empty or blank values will be provided <i>as is</i> in the <tt>CONNECT</tt> Control
+   * value. Empty or blank values will be provided <i>as is</i> in the {@code CONNECT} Control
    * Packet built to connect to the broker.
    *
    * <p>Note that the {@code username} which may be provided by the client will take precedence over
@@ -101,7 +101,7 @@ public interface MqttBrokerConfig {
    * 
    * <p>As for {@link #getUsername()}, this method should returns {@code null} value in the case of
    * unauthenticated access. Empty or blank values will be provided <i>as is</i> in the
-   * <tt>CONNECT</tt> Control Packet built to connect to the broker.
+   * {@code CONNECT} Control Packet built to connect to the broker.
    * 
    * <p>Note that the {@code password} which may be provided by the client will take precedence over
    * the one returned by this method.
