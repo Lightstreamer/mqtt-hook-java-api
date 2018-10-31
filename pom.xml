@@ -26,7 +26,7 @@
       <organizationUrl>https://www.lightstreamer.com/</organizationUrl>
     </developer>
   </developers>
-  
+
   <scm>
     <connection>scm:git:https://github.com/MQTTCool/mqtt.cool-hook-java-api</connection>
     <developerConnection>scm:git:https://github.com/MQTTCool/mqtt.cool-hook-java-api.git</developerConnection>
@@ -43,7 +43,7 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
-  
+
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -51,7 +51,7 @@
     <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
   </properties>
-  
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -60,7 +60,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
+
   <build>
     <pluginManagement>
       <plugins>
@@ -139,5 +139,5 @@
       </build>
     </profile>
   </profiles>
-  
+
 </project>
