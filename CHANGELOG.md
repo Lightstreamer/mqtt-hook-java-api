@@ -1,5 +1,16 @@
-1.2.0 build 281 (18 Oct 2018)
-----------------------------------------------------------------
+# Changelog
+
+## [1.2.1 build 290] (2020-06-25)
+
+*Compatible with MQTT.Cool since version 1.0.3 b3*
+
+**Improvements**
+
+- Changed format of the `CHANGELOG.md` file.
+
+## [1.2.0 build 281] (2018-10-18)
+
+*Compatible with MQTT.Cool since version 1.0.3 b3*
 
 **Improvements**
 
@@ -14,14 +25,9 @@
 `MqttBrokerConfig.getClientIdPrefix()` method.
 - Removed unsupported *HTML5* tags from the API specification.
 
-**Compatibility**
+## [1.1.0 build 175] (2018-01-09)
 
-Compatible with MQTT.Cool since version 1.0.3 b3
-
-
-
-1.1.0 build 175 (9 Jan 2018)
-----------------------------
+*Compatible with MQTT.Cool since version 1.0.3 b3*
 
 **Improvements**
 
@@ -48,14 +54,9 @@ the `MqttBrokerConfigBuilder.willMessage(...)` method.
 `MqttBrokerConfigBuilder.willMessage(...)` method about the behavior of
 `MqttBrokerConfig.getWillMessage()`.
 
-**Compatibility**
+## [1.0.1 build 165] (2018-22-09)
 
-Compatible with MQTT.Cool since version 1.0.3 b3
-
-
-
-1.0.1 build 165 (22 Sep 2017)
------------------------------
+*Compatible with MQTT.Cool since version 1.0.3 b1*
 
 **Improvements**
 
@@ -64,17 +65,8 @@ Compatible with MQTT.Cool since version 1.0.3 b3
 - Added JUnit test cases for the concrete classes provided by the API.
 - Improved code formatting.
 
-**Compatibility**
+## [1.0.0 build 159] (2019-08-02)
 
-Compatible with MQTT.Cool since version 1.0.3 b1
+*Compatible with MQTT.Cool since version 1.0.3 b1*
 
-
-
-1.0.0 build 159 (2 Aug 2017)
-----------------------------
-
-First public release.
-
-**Compatibility**
-
-Compatible with MQTT.Cool since version 1.0.3 b1
+- First public release.
