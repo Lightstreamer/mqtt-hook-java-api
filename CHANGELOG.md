@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.2 build 291] (2020-10-01)
+
+*Compatible with MQTT.Cool since version 1.0.3 b3*
+
+**Bug Fixes**
+
+- Removed undefined results appearing when using the search box from the API specification pages.
+
 ## [1.2.1 build 290] (2020-06-25)
 
 *Compatible with MQTT.Cool since version 1.0.3 b3*
