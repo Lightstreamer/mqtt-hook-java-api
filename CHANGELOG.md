@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.0] (YYYY-MM-DD)
+
+*Compatible with MQTT.Cool since version 1.0.3 b3*
+
+**Improvements**
+
+- Bump junit from 4.11 to 4.13.1 ([#1](https://github.com/MQTTCool/mqtt.cool-hook-java-api/pull/1)).
+- Changed license to Apache 2.0.
+
 ## [1.2.2 build 291] (2020-10-01)
 
 *Compatible with MQTT.Cool since version 1.0.3 b3*
