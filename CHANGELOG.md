@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.3.0] (YYYY-MM-DD)
+## [1.3.0] (2020-11-11)
 
 *Compatible with MQTT.Cool since version 1.0.3 b3*
 
