@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'signing'
 }
 
 repositories {
@@ -83,4 +84,8 @@ publishing {
             }
         }
     }
+}
+
+signing {
+    sign publishing.publications.maven
 }
