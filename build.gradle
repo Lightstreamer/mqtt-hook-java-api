@@ -81,7 +81,6 @@ publishing {
     }
 
     repositories {
-    /*
         maven {
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
             credentials {
@@ -89,7 +88,6 @@ publishing {
                 password ossrhPassword
             }
         }
-        */
     }
 }
 
