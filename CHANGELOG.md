@@ -7,7 +7,7 @@
 **Improvements**
 
 - Migrated the build to _Gradle_.
-- Bump junit from 4.11 to 4.13.1 ([#1](https://github.com/MQTTCool/mqtt.cool-hook-java-api/pull/1)).
+- Bump junit from 4.11 to 4.13.1 ([#1](https://github.com/Lightstreamer/mqtt-hook-java-api/pull/1)).
 - Changed license to Apache 2.0.
 
 ## [1.2.2 build 291] (2020-10-01)
